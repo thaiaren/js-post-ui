@@ -37,7 +37,7 @@
 
     <body>
         <!-- This is a template HTML for a post item -->
-        <template id="postItemTemplate">
+        <template id="postTemplate">
             <li class="col-12 col-md-6 col-lg-4">
                 <div class="post-item mb-4">
                     <div class="card">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="post-item-menu">
+                    <div data-id="menu" class="post-item-menu">
                         <div
                             data-id="edit"
                             class="menu-item rounded-circle"
@@ -210,19 +210,31 @@
                 <div class="container">
                     <h1 class="with-underline text-center">Latest posts</h1>
 
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="search">search</span>
+                        <input
+                            id="searchInput"
+                            type="text"
+                            class="form-control"
+                            placeholder="search"
+                            aria-label="search"
+                            aria-describedby="search"
+                        />
+                    </div>
+
                     <!-- Posts list -->
                     <ul
-                        id="postsList"
-                        class="row posts-list justify-content-center"
+                        id="postList"
+                        class="row posts-list justify-content-center ps-0"
                     >
-                        <li class="col-12 col-md-6 col-lg-4">
+                        <!-- <li class="col-12 col-md-6 col-lg-4">
                             <div class="post-item mb-4">
                                 <div class="card">
                                     <img
                                         src="images/recipe.jpg"
                                         class="card-img-top"
                                         alt="recipe"
-                                        onerror="this.onerror=null;this.src='https://picsum.photos/1368/400';"
+                                        onerror="this.onerror=null;this.src='https:picsum.photos/1368/400';"
                                     />
 
                                     <div class="card-body">
@@ -257,13 +269,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <!-- Posts pagination -->
                     <nav class="posts-nav" aria-label="Posts navigation">
                         <ul
-                            hidden
                             id="postsPagination"
                             class="pagination justify-content-center"
                         >
